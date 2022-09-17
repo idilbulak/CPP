@@ -1,6 +1,6 @@
 NAME			=	megaphone
 
-SRC				= 	megaphone.cpp
+SRC				= 	Megaphone.cpp
 
 OBJS			=	$(SRC:%.cpp=%.o)
 
@@ -11,7 +11,7 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
-				
+				@echo "\033[0;36m<Megaphone> turns every char to upper case!"
 clean:
 	rm -f $(OBJS)
 fclean: clean

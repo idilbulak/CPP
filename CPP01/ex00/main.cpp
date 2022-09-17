@@ -1,17 +1,18 @@
 #include "Zombie.hpp"
 
-int	main() {
+int	main( int argc, char **argv) {
 
-	Zombie	_zombie("_Stack");
-	_zombie.announce();
+	if ( argc != 1 ) {
+		std::cout << "ERROR" << std::endl;
+		exit(EXIT_FAILURE);
+	}
 
-	Zombie *heap = newZombie("_Heap");
+	Zombie *heap = newZombie("Heap");
 	heap->announce();
 
-	randomChump("_Random");
+	randomChump("Stack");
 
 	delete heap;
-
 	return 0;
 
 }

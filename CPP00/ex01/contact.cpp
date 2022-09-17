@@ -1,45 +1,65 @@
-#include "inc/contact.hpp"
+#include "contact.hpp"
 
-Contact::Contact( void ) {
+int	Contact::ft_getinfo() {
 
-}
+	std::string line;
 
-Contact::~Contact( void ) {
+	std::cout << "First name: ";
+	if ( !(std::getline( std::cin, firstName)) )
+		std::exit( EXIT_FAILURE );
+	while ( firstName.empty() ) {
+		std::cout << "\033[0;36mA contact can't have an empty field" << std::endl;
+		std::cout << "\033[0;30mFirst name: ";
+		std::getline(std::cin, firstName);
+	}
+	std::cout << "Last name: ";
+	if ( !(std::getline( std::cin, lastName)) )
+		std::exit( EXIT_FAILURE );
+	while ( lastName.empty() ) {
+		std::cout << "\033[0;36mA contact can't have an empty field" << std::endl;
+		std::cout << "\033[0;30mLast name: ";
+		std::getline(std::cin, lastName);
+	}
+	std::cout << "Nickname: ";
+	if ( !(std::getline( std::cin, nickName)) )
+		std::exit( EXIT_FAILURE );
+	while ( nickName.empty() ) {
+		std::cout << "\033[0;36mA contact can't have an empty field" << std::endl;
+		std::cout << "\033[0;30mNick name: ";
+		std::getline(std::cin, nickName);
+	}
+	std::cout << "Phone Number: ";
+	if ( !(std::getline( std::cin, phoneNumber)) )
+		std::exit( EXIT_FAILURE );
+	while ( phoneNumber.empty() ) {
+		std::cout << "\033[0;36mA contact can't have an empty field" << std::endl;
+		std::cout << "\033[0;30mPhone Number: ";
+		std::getline(std::cin, phoneNumber);
+	}
+	std::cout << "Darkest Secret: ";
+	if ( !(std::getline( std::cin, darkestSecret)) )
+		std::exit( EXIT_FAILURE );
+	while ( darkestSecret.empty() ) {
+		std::cout << "\033[0;36mA contact can't have an empty field" << std::endl;
+		std::cout << "\033[0;30mDarkest Secret: ";
+		std::getline(std::cin, darkestSecret);
+	}
+	std::cout << std::endl;
+	std::cout << "\033[0;36mContact added." << std::endl;
+	std::cout << std::endl;
+	std::cout << "\033[0;30mPlease enter another commmand" << std::endl;
+	std::cout << std::endl;
+
+	return 1;
 
 }
 
 void	Contact::print_cont() {
 
-	std::cout << "First name: " << this->firstname << std::endl;
-	std::cout << "Last name: " << this->lastname << std::endl;
-	std::cout << "Nickname: " << this->nickname << std::endl;
-	std::cout << "Phone Number: " << this->phone_number << std::endl;
-	std::cout << "Darkest Secret: " << this->darkest_secret << std::endl;
-
-}
-
-bool	Contact::get_details() {
-
-	std::string line;
-
-	std::cout << "Please fill in the below" << std::endl;
-	std::cout << std::endl;
-	std::cout << "First name: ";
-	std::getline(std::cin, firstname);
-	std::cout << "Last name: ";
-	std::getline(std::cin, lastname);
-	std::cout << "Nickname: ";
-	std::getline(std::cin, nickname);
-	std::cout << "Phone Number: ";
-	std::getline(std::cin, phone_number);
-	std::cout << "Darkest Secret: ";
-	std::getline(std::cin, darkest_secret);
-	std::cout << std::endl;
-	std::cout << "Contact added." << std::endl;
-	std::cout << std::endl;
-	std::cout << "Please enter another commmand" << std::endl;
-	std::cout << std::endl;
-
-	return true;
+	std::cout << "First name: " << this->firstName << std::endl;
+	std::cout << "Last name: " << this->lastName << std::endl;
+	std::cout << "Nickname: " << this->nickName << std::endl;
+	std::cout << "Phone Number: " << this->phoneNumber << std::endl;
+	std::cout << "Darkest Secret: " << this->darkestSecret << std::endl;
 
 }

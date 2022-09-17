@@ -3,13 +3,13 @@
 Zombie::Zombie( std::string name ) {
 
 	_name = name;
-	std::cout << _name << " zombie was born." << std::endl;
+	std::cout << "A zombie was born in " << _name << std::endl;
 	return;
 }
 
 Zombie::~Zombie( void ) {
 
-	std::cout << RED << _name << " zombie was destroyed." << RESET << std::endl;
+	std::cout << RED << "A zombie was destroyed in " << _name << RESET << std::endl;
 	return; 
 }
 

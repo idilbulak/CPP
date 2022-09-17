@@ -24,7 +24,7 @@ void	Zombie::announce( void ) {
 	return;
 }
 
-void	Zombie::setName( const std::string name ) {
+void	Zombie::giveName( const std::string name ) {
 
 	_name = name;
 	return;
