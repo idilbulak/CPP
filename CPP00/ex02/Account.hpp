@@ -56,7 +56,7 @@ private:
 
 };
 
-
+//https://www.w3schools.com/cpp/cpp_encapsulation.asp
 
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //
