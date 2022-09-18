@@ -20,3 +20,13 @@ int		main( void ) {
 
 	return 0;
 }
+
+/*
+
+A pointer in C++ is a variable that holds the memory address of another variable.
+
+A reference is an alias for an already existing variable. Once a reference is 
+initialized to a variable, it cannot be changed to refer to another variable.
+Hence, a reference is similar to a const pointer.
+
+*/

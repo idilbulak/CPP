@@ -1,4 +1,4 @@
-#include "inc/HumanB.hpp"
+#include "HumanB.hpp"
 
 HumanB::HumanB( const std::string name ) 
 	: _name( name ), _weapon( nullptr )  {
@@ -12,9 +12,9 @@ HumanB::~HumanB( void ) {
 void	HumanB::attack( void ) const {
 
 	if(!_weapon)
-		std::cout << _name << " attacks without a weapon" << std::endl;
+		std::cout << "\033[0;30m" + _name << " attacks without a weapon" << std::endl;
 	else
-		std::cout << _name << " attacks with his" << _weapon->getType() << std::endl;
+		std::cout << "\033[0;30m" + _name << " attacks with his " << _weapon->getType() << std::endl;
 	return;
 }
 

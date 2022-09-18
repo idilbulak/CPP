@@ -1,19 +1,22 @@
 #include <iostream>
 #include <fstream>
 
-int	ft_error( void ) {
+void	ft_error( void ) {
 
 		std::cout << "ERROR" << std::endl;
-		return -1;
+		exit (EXIT_FAILURE);
 }
 
 int	main( int argc, char** argv) {
 
 	if ( argc != 4 )
 		ft_error();
-	
-	std::string	fileName = (std::string)argv[1];
+
+	(std::string)*argv;
+	std::string	fileName = argv[1];
 	std::string	s1 = argv[2];
+	if (s1.length() == 0)
+		ft_error();
 	std::string	s2 = argv[3];
 	std::string	line;
 
@@ -22,12 +25,11 @@ int	main( int argc, char** argv) {
 		ft_error();
 
 	fileName = fileName + ".replace";
-	std::ofstream	ofs(fileName); //open a file iin write mode.
+	std::ofstream	ofs(fileName); //open a file in write mode.
 	if (!ofs.is_open())
 		ft_error();
 
 	while (getline(ifs, line)) {
-
 		size_t	index;
 		while ((index = (&line)->find(s1)) != std::string::npos) {
 			(&line)->erase(index, s1.length());
@@ -38,7 +40,6 @@ int	main( int argc, char** argv) {
 			ofs << line << std::endl;
 
 	}
-	
 	ofs.close();
 	ifs.close();
 }

@@ -9,10 +9,8 @@ Zombie*		zombieHorde( int n, const std::string name ) {
 	for (int i = 0; i < n; i++) {
 		std::stringstream	str;
 		str << i;
-		zombies[i].giveName(name + "[" + str.str() + "]");
-
+		zombies[i].giveName( name + str.str() );
 	}
-
 	return zombies;
 }
 
