@@ -29,12 +29,12 @@ int		main( int argc, char **argv ) {
 		else if ( command == "ADD" ) {
 			std::cout << std::endl;
 			if ( !phoneBook.ft_add() )
-				std::cout << "\033[0;36Failuere!" << std::endl;
+				std::cout << "\033[0;30mAnother command please!" << std::endl;
 		}
 		else if ( command == "SEARCH") {
 			std::cout << std::endl;
 			if ( !phoneBook.ft_search() )
-				std::cout << "\033[0;36Failuere!" << std::endl;
+				std::cout << "\033[0;30mAnother command please!" << std::endl;
 		}
 		else {
 			std::cout << std::endl;
