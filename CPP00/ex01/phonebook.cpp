@@ -41,14 +41,12 @@ int	PhoneBook::ft_search( void ) {
 		std::cin.clear();
 		std::cout << "\033[0;36mNot an available contact index!" << std::endl;
 		std::cout << std::endl;
-		ft_search();
+		return 0;
 	}
 	else {
 		std::cout << std::endl;
 		ft_printcontactdetails(contacts[i - 1], i);;
 	}
-	std::cout << std::endl;
-	std::cout << "Please enter another commmand" << std::endl;
 	return 1;
 }
 
@@ -83,7 +81,8 @@ void	PhoneBook::ft_printcontactdetails( Contact& contact, int index  ) {
 		std::cout << "Nickname\t: " << contact.nickName << std::endl;
 		std::cout << "Phone Number\t: " << contact.phoneNumber << std::endl;
 		std::cout << "Darkest Secret\t: " << contact.darkestSecret << std::endl;
-
+		std::cout << std::endl;
+		std::cout << "Please enter another commmand" << std::endl;
 }
 
 void	PhoneBook::ft_printphonebook( void ) {

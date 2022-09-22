@@ -18,7 +18,11 @@ class Contact {
 		std::string	darkestSecret;
 
 		int		ft_getinfo();
-		int		ft_notvalid();
+		int		ft_getfn();
+		int		ft_getln();
+		int		ft_getnn();
+		int		ft_getph();
+		int		ft_getds();
 
 };
 
