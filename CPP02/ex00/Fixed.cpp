@@ -3,13 +3,11 @@
 Fixed::Fixed( void ) {
     _numberValue = 0;
     std::cout << GREY << "Default constructor called" << RESET << std::endl;
-	return;
 }
 
-Fixed::Fixed( const Fixed &fixed ) {
+Fixed::Fixed( const Fixed& fixed ) {
     std::cout << GREY << "Copy constructor called" << RESET << std::endl;
     *this = fixed;
-	return;
 }
 
 Fixed& Fixed::operator=( const Fixed &fixed ) {
@@ -20,7 +18,6 @@ Fixed& Fixed::operator=( const Fixed &fixed ) {
 
 Fixed::~Fixed( void ) {
     std::cout << GREY << "Destructor called" << RESET << std::endl;
-	return; 
 }
 
 int	Fixed::getRawBits( void ) const {
@@ -30,5 +27,4 @@ int	Fixed::getRawBits( void ) const {
 
 void Fixed::setRawBits( int const raw ) {
 	_numberValue = raw;
-    return ;
 }
