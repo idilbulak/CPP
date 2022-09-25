@@ -15,21 +15,17 @@
 
 class Zombie {
 
-public:
-	
-	int	foo;
+	public:
+		Zombie( );
+		Zombie( const std::string name );
+		~Zombie( void );
 
-	Zombie( );
-	Zombie( const std::string name );
-	~Zombie( void );
+		void	announce( void );
+		void	giveName( const std::string name );
 
-	void	announce( void );
-	void	giveName( const std::string name );
+	private:
 
-private:
-
-	std::string _name;
-
+		std::string _name;
 };
 
 Zombie*		zombieHorde( int n, const std::string name );

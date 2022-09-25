@@ -3,6 +3,7 @@
 Harl::Harl( void ) {
 
 	std::cout << CYAN << "Harl is ready to complain" << RESET << std::endl;
+	std::cout << std::endl;
 	return;
 }
 
@@ -51,10 +52,8 @@ void	Harl::error( void ) {
 void	Harl::complain( std::string level ) {
 
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	int 	index;
-
-	void	(Harl::*point[4])( void ) = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
 	
+	int 	index = 0;	
 	for ( int i = 0; i < 4; i++) {
 		if ( levels[i] == level ) {
 			index = i;
@@ -65,23 +64,16 @@ void	Harl::complain( std::string level ) {
 	switch (index) {
 
 		case( 0 ):
-			for (int i = index; i < 4; i++)
-				(this->*(point[i]))();
-			break;
+			debug();
 
 		case( 1 ):
-			for (int i = index; i < 4; i++)
-				(this->*(point[i]))();
-			break;
+			info();
 
 		case( 2 ):
-			for (int i = index; i < 4; i++)
-				(this->*(point[i]))();
-			break;
+			warning();
 
 		case( 3 ):
-			for (int i = index; i < 4; i++)
-				(this->*(point[i]))();
+			error();
 			break;
 	}
 

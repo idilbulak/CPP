@@ -1,20 +1,31 @@
-NAME			=	fixed
+NAME			= fixed
 
-SRC				= 	Fixed.cpp main.cpp
+CPP				= c++
 
-OBJS			=	$(SRC:%.cpp=%.o)
+FLAGS			= -std=c++98 -Wall -Wextra -Werror
 
 CPP				=	c++
 CPP_FLAGS		= 	-Wall -Wextra -Werror -std=c++98 
+SRC				= Fixed.cpp main.cpp
 
-all:			$(NAME)
 
-$(NAME):		$(OBJS)
-				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
-				
-clean:
-	rm -f $(OBJS)
-fclean: clean
-	rm -f $(NAME)
-re: fclean all
-.PHONY: all clean fclean re bonus
+INC				= Fixed.hpp 
+
+OBJ_DIR			= obj
+OBJ				= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
+
+all : $(NAME)
+
+$(OBJ_DIR)/%.o : %.cpp
+	@mkdir -p $(dir $@)
+	$(CPP) $(FLAGS) -c $< -o $@
+
+$(NAME) : $(OBJ)
+	$(CPP) $(FLAGS) $^ -o $@
+
+clean : 
+	rm -rf $(OBJ_DIR)
+fclean : clean
+	rm -rf $(NAME)
+re : fclean all
+.PHONY : clean, fclean, all, re

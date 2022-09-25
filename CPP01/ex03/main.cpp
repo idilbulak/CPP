@@ -37,6 +37,5 @@ int		main( void ) {
 	jim.setWeapon(club);
 	jim.attack();
 	}
-	
 	return 0;
 }

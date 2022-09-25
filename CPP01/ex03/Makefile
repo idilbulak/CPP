@@ -1,20 +1,28 @@
-NAME			=	unnecessary_violance
+NAME			= unnecessary_violance
 
-SRC				= 	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+CPP				= c++
 
-OBJS			=	$(SRC:%.cpp=%.o)
+FLAGS			= -std=c++98 -Wall -Wextra -Werror
 
-CPP				=	g++
-CPP_FLAGS		= 	-Wall -Wextra -Werror -std=c++98 
+SRC				= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
-all:			$(NAME)
+INC				= HumanA.hpp HumanB.hpp Weapon.hpp 
 
-$(NAME):		$(OBJS)
-				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
-				
-clean:
-	rm -f $(OBJS)
-fclean: clean
-	rm -f $(NAME)
-re: fclean all
-.PHONY: all clean fclean re bonus
+OBJ_DIR			= obj
+OBJ				= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
+
+all : $(NAME)
+
+$(OBJ_DIR)/%.o : %.cpp
+	@mkdir -p $(dir $@)
+	$(CPP) $(FLAGS) -c $< -o $@
+
+$(NAME) : $(OBJ)
+	$(CPP) $(FLAGS) $^ -o $@
+
+clean : 
+	rm -rf $(OBJ_DIR)
+fclean : clean
+	rm -rf $(NAME)
+re : fclean all
+.PHONY : clean, fclean, all, re

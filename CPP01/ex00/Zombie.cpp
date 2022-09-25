@@ -1,20 +1,14 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie( std::string name ) {
-
 	_name = name;
-	std::cout << "A zombie was born in " << _name << std::endl;
-	return;
+	std::cout << "Zombie " << _name << " was born." << std::endl;
 }
 
 Zombie::~Zombie( void ) {
-
-	std::cout << RED << "A zombie was destroyed in " << _name << RESET << std::endl;
-	return; 
+	std::cout << RED << "Zombie " << _name << " was destroyed." << RESET << std::endl;
 }
 
 void	Zombie::announce( void ) {
-
 	std::cout << YELLOW << _name << ": BraiiiiiiinnnzzzZ..." << RESET << std::endl;
-	return;
 }

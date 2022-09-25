@@ -2,6 +2,8 @@
 
 int	main( int argc, char **argv) {
 
+	(void)argv;
+
 	if ( argc != 1 ) {
 		std::cout << "ERROR" << std::endl;
 		exit(EXIT_FAILURE);
