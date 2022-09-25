@@ -87,6 +87,11 @@ Fixed Fixed::operator-( const Fixed& fixed ) const {
     return result;
 }
 
+Fixed Fixed::operator-( void ) {
+    Fixed result = -this->toFloat();
+    return result;
+}
+
 Fixed Fixed::operator*( const Fixed& fixed ) const {
     Fixed result = this->toFloat() * fixed.toFloat();
     return result;

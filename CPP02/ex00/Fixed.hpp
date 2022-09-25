@@ -10,23 +10,18 @@
 
 class Fixed {
 
-public:
-	
-	Fixed( void );
-    Fixed( const Fixed &fixed );
-	~Fixed( void );
+    public:
+        Fixed( void );
+        Fixed( const Fixed& fixed);
+        Fixed &operator=(const Fixed& fixed);
+        ~Fixed( void );
 
-    Fixed &operator=( const Fixed &fixed );
-	
-    int getRawBits( void ) const;
-	void setRawBits( int const raw );
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
 
-private:
-
-    int _numberValue;
-    static const int fractionalBits = 8;
-
+    private:
+        int _numberValue;
+        static const int _fractionalBits = 8; 
 };
-
 
 #endif

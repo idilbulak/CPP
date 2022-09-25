@@ -12,31 +12,25 @@
 
 class Fixed {
 
-public:
-	
-	Fixed( void );
-    Fixed( const Fixed &fixed );
-    Fixed( const int fixed );
-    Fixed( const float fixed );
-	~Fixed( void );
+    public:
+        Fixed( void );
+        Fixed( const int integer);
+        Fixed( const float floating);
+        Fixed( const Fixed& fixed);
+        Fixed &operator=(const Fixed& fixed);
+        ~Fixed( void );
 
-    Fixed &operator=( const Fixed &fixed );
-	
-    int getRawBits( void ) const;
-	void setRawBits( int const raw );
-    
-    float toFloat( void ) const;
-    int toInt( void ) const;
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
 
+        float toFloat( void ) const;
+        int  toInt( void ) const;
 
-private:
-
-    int _numberValue;
-    static const int fractionalBits = 8;
-
+    private:
+        int _numberValue;
+        static const int _fractionalBits = 8; 
 };
 
 std::ostream &operator<<( std::ostream &o, const Fixed &fixed);
-
 
 #endif
