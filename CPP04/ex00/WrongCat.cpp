@@ -1,12 +1,12 @@
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat( void ) {
-		std::cout << CYAN << "[ WrongCat ] " << GREY << "Default constructor called" << RESET << std::endl;
-		this->_type = "WrongCat";
+	std::cout << BLUE << "[ WrongCat ] "  << "Default constructor called" << RESET << std::endl;
+	this->_type = "WrongCat";
 }
 
 WrongCat::WrongCat( const WrongCat& wrongcat) {
-	std::cout << CYAN << "[ WrongCat ] " << GREY << "Copy constructor called" << RESET << std::endl;
+	std::cout << BLUE << "[ WrongCat ] "  << "Copy constructor called" << RESET << std::endl;
 	*this = wrongcat;
 }
 
@@ -16,9 +16,9 @@ WrongCat &WrongCat::operator=(const WrongCat& wrongcat) {
 }
 
 WrongCat::~WrongCat( void ) {
-	std::cout << CYAN << "[ WrongCat ] " << GREY << "Destructor called" << RESET << std::endl;
+	std::cout << BLUE << "[ WrongCat ] "  << "Destructor called" << RESET << std::endl;
 }
 
 void WrongCat::makeSound( void ) const {
-	std::cout << CYAN << "[ WrongCat ] " << GREY << "Meeeoooowwwww" << RESET << std::endl;
+	std::cout << BLUE << "[ WrongCat ] "  << "Meeeoooowwwww" << RESET << std::endl;
 }
