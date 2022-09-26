@@ -32,9 +32,9 @@ FragTrap::~FragTrap( void ) {
 
 void FragTrap::attack( const std::string& target) {
     if (this->_hitPoints == 0 || this->_energyPoints == 0)
-        std::cout << CYAN << _name << " can't do anything." << RESET << std::endl;
+        std::cout << RED << _name << " can't do anything." << RESET << std::endl;
     else {
-        std::cout << RED << "[FragTrap] " << _name << " attacks " << target << " causing " << _attackDamage << " points of damage." << RESET << std::endl;
+        std::cout << CYAN << "[FragTrap] Attack: " << RESET << _name << " attacks " << target << " causing " << _attackDamage << " points of damage." << std::endl;
         this->_energyPoints--;
     }
 }
@@ -43,7 +43,7 @@ void FragTrap::highFivesGuys( void ) {
     if (this->_hitPoints == 0)
         std::cout << RED << _name << " is dead, can't high five." << RESET << std::endl;
     else
-        std::cout << CYAN << "[FragTrap] " << _name << " wants to high five " << RESET << std::endl;
+        std::cout << CYAN << _name << " wants to high five " << RESET << std::endl;
 }
 
 

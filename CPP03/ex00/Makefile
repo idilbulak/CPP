@@ -4,10 +4,7 @@ CPP				= c++
 
 FLAGS			= -std=c++98 -Wall -Wextra -Werror
 
-CPP				=	c++
-CPP_FLAGS		= 	-Wall -Wextra -Werror -std=c++98 
 SRC				= ClapTrap.cpp main.cpp
-
 
 INC				= ClapTrap.hpp 
 

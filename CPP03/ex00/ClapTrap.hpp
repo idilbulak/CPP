@@ -3,6 +3,7 @@
 
 #define CYAN	"\033[36m"
 #define RED  	"\033[31m"
+#define GREEN 	"\033[32m"
 #define GREY	"\033[1;30m"
 #define RESET	"\033[0m"
 

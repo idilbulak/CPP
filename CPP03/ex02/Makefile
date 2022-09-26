@@ -1,15 +1,12 @@
-NAME			= fragtrap
+NAME			= fragTrap
 
 CPP				= c++
 
 FLAGS			= -std=c++98 -Wall -Wextra -Werror
 
-CPP				=	c++
-CPP_FLAGS		= 	-Wall -Wextra -Werror -std=c++98 
-SRC				= ClapTrap.cpp main.cpp FragTrap.cpp
+SRC				= ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
 
-
-INC				= ClapTrap.hpp FragTrap.hpp
+INC				= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 OBJ_DIR			= obj
 OBJ				= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
