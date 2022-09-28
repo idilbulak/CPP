@@ -1,4 +1,4 @@
-NAME			= polymorphism
+NAME			= BrainyAnimals
 
 CPP				= c++
 

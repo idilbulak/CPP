@@ -64,7 +64,7 @@ int main( void ) {
         std::cout << std::endl;
         const WrongAnimal* meta = new WrongAnimal();
         const WrongAnimal* i = new WrongCat();
-        std::cout << BLUE << i->getType() << GREY << " (shoild be WrongCat)" << RESET << std::endl;
+        std::cout << BLUE << i->getType() << GREY << " (should be WrongCat)" << RESET << std::endl;
         std::cout << GREY << "WrongCat sound:" << RESET << std::endl;
         i->makeSound();
         std::cout << GREY << "WrongAnimal sound:" << RESET << std::endl;
@@ -73,6 +73,6 @@ int main( void ) {
         delete i;
         std::cout << std::endl;
     }
-    // while(1){};
+    // while(42){};
 return 0;
 }

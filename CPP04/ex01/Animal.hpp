@@ -19,7 +19,6 @@ class Animal {
         virtual ~Animal ( void );
 
         virtual void makeSound( void ) const;
-
 		const std::string& getType( void ) const;
 
 	protected:

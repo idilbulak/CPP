@@ -23,6 +23,6 @@ const std::string& Animal::getType( void ) const {
 	return _type;
 }
 
-// void Animal::makeSound( void ) const {
-// 	std::cout << GREEN << "[ Animal ] " << "makes ? sound" << RESET << std::endl;
-// }
+void Animal::makeSound( void ) const {
+	std::cout << GREEN << "[ Animal ] " << "has no sound" << RESET << std::endl;
+}

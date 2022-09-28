@@ -24,5 +24,5 @@ const std::string& Animal::getType( void ) const {
 }
 
 void Animal::makeSound( void ) const {
-	std::cout << GREEN << "[ Animal ] " << "makes ? sound" << RESET << std::endl;
+	std::cout << GREEN << "[ Animal ] " << "has no sound" << RESET << std::endl;
 }

@@ -5,6 +5,8 @@
 #define RED  	"\033[31m"
 #define GREEN 	"\033[32m"
 #define YELLOW 	"\033[33m"
+#define BLUE 	"\033[34m"
+#define PURPLE 	"\033[35m"
 #define GREY	"\033[1;30m"
 #define RESET	"\033[0m"
 
@@ -21,7 +23,7 @@ class Brain {
 		const std::string& getIdeas( int i ) const;
 
 	protected:
-		std::string *_ideas;
+		std::string _ideas[100];
 };
 
 #endif
