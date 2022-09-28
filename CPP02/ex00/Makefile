@@ -13,7 +13,7 @@ OBJ				= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 
 all : $(NAME)
 
-$(OBJ_DIR)/%.o : %.cpp
+$(OBJ_DIR)/%.o : %.cpp 
 	@mkdir -p $(dir $@)
 	$(CPP) $(FLAGS) -c $< -o $@
 
