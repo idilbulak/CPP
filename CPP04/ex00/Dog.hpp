@@ -6,12 +6,12 @@
 class Dog : public Animal {
 
 	public:
-                Dog( void );
-                Dog ( const Dog& dog );
-                Dog &operator=( const Dog& dog );
-                virtual ~Dog ( void );
+        Dog( void );
+        Dog ( const Dog& dog );
+        Dog &operator=( const Dog& dog );
+        virtual ~Dog ( void );
 
-                virtual void makeSound( void ) const;
+        virtual void makeSound( void ) const;
 };
 
 #endif
