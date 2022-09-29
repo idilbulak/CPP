@@ -28,3 +28,4 @@ class Animal {
 #endif
 
 // https://www.geeksforgeeks.org/virtual-function-cpp/
+//pure virtual function (=0)

@@ -27,7 +27,7 @@ Character::Character( const std::string& name)
 }
 
 Character &Character::operator=(const Character& character) {
-	if (this == &character);
+	if (this == &character)
 	    return *this;
     for (int i = 0; i < 4; i++) {
         delete _inventory[i];
@@ -47,6 +47,7 @@ Character::~Character( void ) {
     for (int i = 0; i < _inventoryCount; i++) {
         delete _inventory[i];
 }
+}
 
 std::string const& Character::getName( void ) const {
     return _name;
@@ -55,7 +56,7 @@ std::string const& Character::getName( void ) const {
 void Character::equip( AMateria *m ) {
     if (!m)
         std::cout << "No AMateria" << std::endl;
-    else if ( _inventoryCount = 4 )
+    else if ( _inventoryCount == 4 )
         std::cout << _name << " has no more slots available" << std::endl;
     else {
         _inventory[_inventoryCount] = m;
@@ -83,5 +84,5 @@ void Character::use( int idx, ICharacter& target ) {
     else if ( idx > 4 || idx < 0 )
         std::cout << "not an available index" << std::endl;
     else
-        _inventory[idx] = use( target );
+        _inventory[idx]->use( target );
 }

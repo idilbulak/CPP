@@ -19,9 +19,9 @@ class Cure : public AMateria {
         virtual AMateria* clone() const;
         virtual void use( ICharacter& target );
 
-   private:
-        Cure ( const Cure& cure );
-        Cure &operator=( const Cure& cure );
+//    private:
+//         Cure ( const Cure& cure );
+//         Cure &operator=( const Cure& cure );
 };
 
 #endif

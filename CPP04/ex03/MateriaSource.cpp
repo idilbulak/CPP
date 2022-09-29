@@ -47,9 +47,9 @@ MateriaSource::MateriaSource( void )
 
 MateriaSource::~MateriaSource( void ) {
 	// std::cout << GREEN << "[ MateriaSource ] " << "Destructor called" << RESET << std::endl;
-    for (int i = 0; i < _createCount; i++) {
+    for (int i = 0; i < _createCount; i++)
         delete _create[i];
-    for (int i = 0; i < _learnCount; i++) {
+    for (int i = 0; i < _learnCount; i++)
         delete _learn[i];
 }
 
@@ -62,7 +62,7 @@ void MateriaSource::learnMateria( AMateria *m ) {
         _learn[_learnCount] = m;
         _learnCount++;
     }
-    else if ( _learnCount = 4 ) {
+    else if ( _learnCount == 4 ) {
         std::cout << "learnMateria is full" << std::endl;
         delete m;
     }
@@ -71,7 +71,7 @@ void MateriaSource::learnMateria( AMateria *m ) {
 AMateria* MateriaSource::createMateria( std::string const& type ) {
     if (_createCount == 4) {
         std::cout << "can not create" << std::endl;
-        retrun NULL;
+        return NULL;
     }
     for ( int i = 0; i < _learnCount; i++) {
         if (_learn[i]->getType() == type ) {
@@ -79,5 +79,6 @@ AMateria* MateriaSource::createMateria( std::string const& type ) {
             return _create[_createCount++]->clone();
         }
     }
+    return NULL;
 }
 

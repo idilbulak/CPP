@@ -11,6 +11,8 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria {
 
 	public:
@@ -26,8 +28,8 @@ class AMateria {
 	protected:
 		std::string _type;
         
-        AMateria ( const AMateria& amateria );
-        AMateria &operator=( const AMateria& amateria );
+        // AMateria ( const AMateria& amateria );
+        // AMateria &operator=( const AMateria& amateria );
 };
 
 #endif

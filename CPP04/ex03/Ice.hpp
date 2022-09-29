@@ -19,9 +19,9 @@ class Ice : public AMateria {
         virtual AMateria* clone() const;
         virtual void use( ICharacter& target );
 
-    private:
-        Ice ( const Ice& ice );
-        Ice &operator=( const Ice& ice );
+    // private:
+    //     Ice ( const Ice& ice );
+    //     Ice &operator=( const Ice& ice );
 };
 
 #endif

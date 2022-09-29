@@ -1,12 +1,12 @@
 NAME			= interface_recap
 
-CPP				= c++
+CPP				= clang++
 
-FLAGS			= -std=c++98 -Wall -Wextra -Werror
+FLAGS			= -std=c++98 -Wall -W -Werror
 
-SRC				= main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRC				= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
-INC				= Animal.hpp Cat.hpp Dog.hpp Brain.hpp
+# INC				= Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 OBJ_DIR			= obj
 OBJ				= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
