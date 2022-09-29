@@ -14,14 +14,14 @@ class Cure : public AMateria {
 
    public:
         Cure( void );
-        virtual ~Cure ( void );
+        ~Cure ( void );
 
         virtual AMateria* clone() const;
         virtual void use( ICharacter& target );
 
-//    private:
-//         Cure ( const Cure& cure );
-//         Cure &operator=( const Cure& cure );
+   private:
+        Cure ( const Cure& cure );
+        Cure &operator=( const Cure& cure );
 };
 
 #endif

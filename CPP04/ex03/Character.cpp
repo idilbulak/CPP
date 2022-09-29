@@ -55,7 +55,7 @@ std::string const& Character::getName( void ) const {
 
 void Character::equip( AMateria *m ) {
     if (!m)
-        std::cout << "No AMateria" << std::endl;
+        std::cout << "No Materia" << std::endl;
     else if ( _inventoryCount == 4 )
         std::cout << _name << " has no more slots available" << std::endl;
     else {
@@ -66,7 +66,7 @@ void Character::equip( AMateria *m ) {
 
 void Character::unequip( int idx ) {
     if (_inventoryCount == 0)
-        std::cout << _name << " has no material" << std::endl;
+        std::cout << _name << " has no materia" << std::endl;
     else if ( idx > 4 || idx < 0 )
         std::cout << "not an available index" << std::endl;
     else if ( _inventory[idx] == NULL )
@@ -80,7 +80,7 @@ void Character::unequip( int idx ) {
 
 void Character::use( int idx, ICharacter& target ) {
     if (_inventoryCount == 0 || not _inventory[idx])
-        std::cout << _name << " has no material" << std::endl;
+        std::cout << _name << " has no materia" << std::endl;
     else if ( idx > 4 || idx < 0 )
         std::cout << "not an available index" << std::endl;
     else

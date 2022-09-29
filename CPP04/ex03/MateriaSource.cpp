@@ -58,7 +58,7 @@ MateriaSource::~MateriaSource( void ) {
 // }
 
 void MateriaSource::learnMateria( AMateria *m ) {
-    if (!m && _learnCount < 4) {
+    if (m && _learnCount < 4) {
         _learn[_learnCount] = m;
         _learnCount++;
     }

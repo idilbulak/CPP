@@ -14,14 +14,14 @@ class Ice : public AMateria {
 
     public:
         Ice( void );
-        virtual ~Ice ( void );
+        ~Ice ( void );
 
         virtual AMateria* clone() const;
         virtual void use( ICharacter& target );
 
-    // private:
-    //     Ice ( const Ice& ice );
-    //     Ice &operator=( const Ice& ice );
+    private:
+        Ice ( const Ice& ice );
+        Ice &operator=( const Ice& ice );
 };
 
 #endif

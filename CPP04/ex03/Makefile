@@ -2,7 +2,7 @@ NAME			= interface_recap
 
 CPP				= clang++
 
-FLAGS			= -std=c++98 -Wall -W -Werror
+FLAGS			= -std=c++98 
 
 SRC				= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
