@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ICharacter.hpp                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/09/30 09:51:59 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/09/30 10:06:04 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
@@ -16,16 +28,16 @@ class AMateria;
 class ICharacter {
 
     public:
+        ICharacter( void ) {}
         virtual ~ICharacter ( void ) {}
         virtual std::string const& getName( void ) const = 0;
         virtual void equip( AMateria* m ) = 0;
         virtual void unequip( int idx) = 0;
         virtual void use( int idx, ICharacter& target ) = 0;
 
-    // private:
-    //     ICharacter( void );
-    //     ICharacter ( const ICharacter& ICharacter );
-    //     ICharacter &operator=( const ICharacter& ICharacter );
+    private:
+        ICharacter ( const ICharacter& ICharacter );
+        ICharacter &operator=( const ICharacter& ICharacter );
 };
 
 #endif

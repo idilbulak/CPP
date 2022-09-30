@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   MateriaSource.cpp                                  :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/09/30 10:07:58 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/09/30 10:07:59 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
@@ -11,39 +23,37 @@ MateriaSource::MateriaSource( void )
             _learn[i] = NULL;
 }
 
-// MateriaSource::MateriaSource( const MateriaSource& MateriaSource) {
-// 	// std::cout << GREEN << "[ MateriaSource ] " << "Copy constructor called" << RESET << std::endl;
-//     this->_name = MateriaSource._name;
-// 	this->_inventoryCount = MateriaSource._inventoryCount;
-//     for (int i = 0; i < 4; i++) {
-//         if ( MateriaSource._inventory[i] )
-//             _inventory[i] = MateriaSource._inventory[i]->clone();
-//         else
-//             _inventory[i] = NULL;
-//     }
-// }
+MateriaSource::MateriaSource( const MateriaSource& materiaSource) {
+	// std::cout << GREEN << "[ MateriaSource ] " << "Copy constructor called" << RESET << std::endl;
+    this->_createCount = materiaSource._createCount;
+    this->_learnCount = materiaSource._learnCount;
+    for (int i = 0; i < 4; i++) {
+        if ( materiaSource._create[i] )
+            _create[i] = materiaSource._create[i];
+        else
+            _create[i] = NULL;
+    }
+    for (int i = 0; i < 4; i++) {
+        if ( materiaSource._learn[i] )
+            _learn[i] = materiaSource._learn[i];
+        else
+            _learn[i] = NULL;
+    }
+}
 
-// MateriaSource::MateriaSource( const std::string& name)
-//     :_name(name), _inventoryCount(0) {
-//         for (int i = 0; i < 4; i++)
-//             _inventory[i] = NULL;
-// }
-
-// MateriaSource &MateriaSource::operator=(const MateriaSource& MateriaSource) {
-// 	if (this == &MateriaSource);
-// 	    return *this;
-//     for (int i = 0; i < 4; i++) {
-//         delete _inventory[i];
-//         _inventory[i] = NULL;
-//     }
-//     this->_inventoryCount = MateriaSource._inventoryCount;
-//     this->_name = MateriaSource._name;
-//     for (int i = 0; i < 4; i++) {
-//         if ( MateriaSource._inventory[i] )
-//             _inventory[i] = MateriaSource._inventory[i]->clone();
-//     }
-//     return *this;
-// }
+MateriaSource &MateriaSource::operator=(const MateriaSource& materiaSource) {
+    for (int i = 0; i < 4; i++) {
+        delete _create[i];
+        _create[i] = NULL;
+    }
+    for (int i = 0; i < 4; i++) {
+        delete _learn[i];
+        _learn[i] = NULL;
+    }
+    this->_createCount = materiaSource._createCount;
+    this->_learnCount = materiaSource._learnCount;
+    return *this;
+}
 
 MateriaSource::~MateriaSource( void ) {
 	// std::cout << GREEN << "[ MateriaSource ] " << "Destructor called" << RESET << std::endl;
@@ -52,10 +62,6 @@ MateriaSource::~MateriaSource( void ) {
     for (int i = 0; i < _learnCount; i++)
         delete _learn[i];
 }
-
-// std::string const& MateriaSource::getName( void ) const {
-//     return _name;
-// }
 
 void MateriaSource::learnMateria( AMateria *m ) {
     if (m && _learnCount < 4) {

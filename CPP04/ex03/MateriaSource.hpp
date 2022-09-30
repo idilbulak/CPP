@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   MateriaSource.hpp                                  :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/09/30 10:07:54 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/09/30 10:07:55 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
@@ -25,8 +37,8 @@ class MateriaSource : public IMateriaSource {
         AMateria* _learn[4];
         int _createCount;
         int _learnCount;
-        // MateriaSource ( const MateriaSource& MateriaSource );
-        // MateriaSource &operator=( const MateriaSource& MateriaSource );
+        MateriaSource ( const MateriaSource& MateriaSource );
+        MateriaSource &operator=( const MateriaSource& MateriaSource );
 };
 
 #endif

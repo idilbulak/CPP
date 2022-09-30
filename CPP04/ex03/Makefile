@@ -6,8 +6,7 @@ FLAGS			= -std=c++98
 
 SRC				= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
-# INC				= Animal.hpp Cat.hpp Dog.hpp Brain.hpp
-
+INC				= AMateria.hpp Character.hpp Cure.hpp Ice.hpp MateriaSource.hpp IMateriaSource.hpp ICharacter.hpp
 OBJ_DIR			= obj
 OBJ				= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 

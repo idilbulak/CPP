@@ -1,24 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   main.cpp                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/09/30 09:52:06 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/09/30 10:08:56 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
 #include "MateriaSource.hpp"
 
 #include <iostream>
-
-// #include <cstdlib> // check memory
+#include <cstdlib>
 
 int main()
 {
+{
+    std::cout << std::endl;
+    std::cout << YELLOW << "[ TEST_1 ] : Example from subject" << RESET << std::endl;
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
     ICharacter* me = new Character("me");
 
-    AMateria* tmp;
-    tmp = src->createMateria("ice");
-    me->equip(tmp);
-    tmp = src->createMateria("cure");
-    me->equip(tmp);
+    AMateria* temp;
+    temp = src->createMateria("ice");
+    me->equip(temp);
+    temp = src->createMateria("cure");
+    me->equip(temp);
 
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
@@ -27,63 +41,68 @@ int main()
     delete bob;
     delete me;
     delete src;
-    // std::cout << std::endl;
+    std::cout << std::endl;
+}
+{
+    std::cout << std::endl;
+    std::cout << YELLOW << "[ TEST_2 ] : UNEQUIP" << RESET << std::endl;
+    IMateriaSource *src1 = new MateriaSource();
+    src1->learnMateria(new Ice());
+    src1->learnMateria(new Cure());
+    ICharacter *idil = new Character("idil");
 
-    // std::cout << "===== Unequip test =====" << std::endl;
+    AMateria *temp;
+    temp = src1->createMateria("ice");
+    idil->equip(temp);
+    temp = src1->createMateria("cure");
+    idil->equip(temp);
 
-    // IMateriaSource *src1 = new MateriaSource();
-    // src1->learnMateria(new Ice());
-    // src1->learnMateria(new Cure());
-    // ICharacter *kang = new Character("kang");
+    idil->unequip(0);
+    idil->unequip(1);
 
-    // AMateria *temp;
-    // temp = src1->createMateria("ice");
-    // kang->equip(temp);
-    // temp = src1->createMateria("cure");
-    // kang->equip(temp);
+    delete src1;
+    delete idil;
+    std::cout << std::endl;
+}
+{
+    std::cout << std::endl;
+    std::cout << YELLOW << "[ TEST_3 ] : Create wrong value" << RESET << std::endl;
+    IMateriaSource *src2 = new MateriaSource();
+    Character idil("idil");
 
-    // kang->unequip(0);
-    // kang->unequip(1);
+    AMateria *temp;
+    temp = src2->createMateria("wrong value");
+    idil.equip(temp);
 
-    // delete src1;
-    // delete kang;
-    // std::cout << std::endl;
+    delete src2;
+    std::cout << std::endl;
+}
+{
+    std::cout << std::endl;
+    std::cout << YELLOW << "[ TEST_4 ] : Creating more" << RESET << std::endl;
+    IMateriaSource *src3 = new MateriaSource();
+    src3->learnMateria(new Ice());
+    src3->learnMateria(new Ice());
+    src3->learnMateria(new Ice());
+    src3->learnMateria(new Cure());
+    src3->learnMateria(new Cure());
+    Character idil("idil");
 
+    AMateria *temp;
+    temp = src3->createMateria("ice");
+    idil.equip(temp);
+    temp = src3->createMateria("ice");
+    idil.equip(temp);
+    temp = src3->createMateria("ice");
+    idil.equip(temp);
+    temp = src3->createMateria("cure");
+    idil.equip(temp);
+    temp = src3->createMateria("cure");
+    idil.equip(temp);
 
-    // std::cout << "===== Deep copy test =====" << std::endl;
-
-    // IMateriaSource *src2 = new MateriaSource();
-    // src2->learnMateria(new Ice());
-    // src2->learnMateria(new Cure());
-    // Character kim("kim");
-
-    // AMateria *temp2;
-    // temp2 = src2->createMateria("ice");
-    // kim.equip(temp2);
-    // temp2 = src2->createMateria("cure");
-    // kim.equip(temp2);
-
-    // Character deep1(kim);
-    // Character deep2;
-
-    // deep2 = deep1;
-
-    // kim.unequip(0);
-
-    // delete src2;
-    // std::cout << std::endl;
-
-    // std::cout << "===== Extra test =====" << std::endl;
-
-    // IMateriaSource *src3 = new MateriaSource();
-    // Character kangkim("kangkim");
-
-    // AMateria *temp3;
-    // temp3 = src3->createMateria("wrong value");
-    // kangkim.equip(temp3);
-
-    // delete src3;
-    
-    // system("leaks main"); // check memory
+    delete src3;
+    std::cout << std::endl;
+}
+    // system("leaks interface_recap");
     return 0;
 }

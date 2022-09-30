@@ -1,4 +1,4 @@
-NAME			= BrainyAnimals
+NAME			= Abstratclass
 
 CPP				= c++
 

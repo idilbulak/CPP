@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   AMateria.hpp                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/09/30 09:48:07 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/09/30 09:48:08 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef AMATERIAL_HPP
 # define AMATERIAL_HPP
 
@@ -28,8 +40,8 @@ class AMateria {
 	protected:
 		std::string _type;
         
-        // AMateria ( const AMateria& amateria );
-        // AMateria &operator=( const AMateria& amateria );
+        AMateria ( const AMateria& amateria );
+        AMateria &operator=( const AMateria& amateria );
 };
 
 #endif

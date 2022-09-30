@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Cure.cpp                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/09/30 09:49:45 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/09/30 09:49:46 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cure.hpp"
 
 Cure::Cure( void )
@@ -5,15 +17,15 @@ Cure::Cure( void )
 		// std::cout << GREEN << "[ Cure ] " << "Default constructor called" << RESET << std::endl;
 }
 
-// Cure::Cure( const Cure& cure) {
-// 	std::cout << GREEN << "[ Cure ] " << "Copy constructor called" << RESET << std::endl;
-// 	*this = cure;
-// }
+Cure::Cure( const Cure& cure) {
+	std::cout << GREEN << "[ Cure ] " << "Copy constructor called" << RESET << std::endl;
+	*this = cure;
+}
 
-// Cure &Cure::operator=(const Cure& cure) {
-// 	this->_type = cure._type;
-// 	return *this;
-// }
+Cure &Cure::operator=(const Cure& cure) {
+	this->_type = cure._type;
+	return *this;
+}
 
 Cure::~Cure( void ) {
 	// std::cout << GREEN << "[ Cure ] " << "Destructor called" << RESET << std::endl;

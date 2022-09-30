@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Character.cpp                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/09/30 09:49:11 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/09/30 09:49:12 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Character.hpp"
 #include "AMateria.hpp"
 
@@ -55,7 +67,7 @@ std::string const& Character::getName( void ) const {
 
 void Character::equip( AMateria *m ) {
     if (!m)
-        std::cout << "No Materia" << std::endl;
+        std::cout << "This is not an available Materia" << std::endl;
     else if ( _inventoryCount == 4 )
         std::cout << _name << " has no more slots available" << std::endl;
     else {

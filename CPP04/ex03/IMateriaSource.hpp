@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   IMateriaSource.hpp                                 :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/09/30 09:51:56 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/09/30 10:06:58 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef IMATERIASOURCE_HPP
 # define IMATERIASOURCE_HPP
 
@@ -14,14 +26,14 @@
 class IMateriaSource {
 
     public:
+        IMateriaSource( void ) {}
         virtual ~IMateriaSource ( void ) {}
         virtual void learnMateria( AMateria *m ) = 0;
         virtual AMateria* createMateria( std::string const &type) = 0;
 
-    // private:
-    //     IMateriaSource( void );
-    //     IMateriaSource ( const IMateriaSource& IMateriaSource );
-    //     IMateriaSource &operator=( const IMateriaSource& IMateriaSource );
+    private:
+        IMateriaSource ( const IMateriaSource& IMateriaSource );
+        IMateriaSource &operator=( const IMateriaSource& IMateriaSource );
 };
 
 #endif

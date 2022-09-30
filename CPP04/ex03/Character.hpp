@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Character.hpp                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/09/30 09:49:13 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/09/30 09:50:45 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
@@ -19,10 +31,10 @@ class Character : public ICharacter {
         Character &operator=( const Character& character );
         virtual ~Character ( void );
 
-        std::string const& getName( void ) const;
-        void equip( AMateria *m );
-        void unequip( int idx);
-        void use( int idx, ICharacter& target );
+        virtual std::string const& getName( void ) const;
+        virtual void equip( AMateria *m );
+        virtual void unequip( int idx);
+        virtual void use( int idx, ICharacter& target );
 
     private:
         std::string _name;
