@@ -6,7 +6,7 @@
 /*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/30 09:49:11 by ibulak        #+#    #+#                 */
-/*   Updated: 2022/09/30 09:49:12 by ibulak        ########   odam.nl         */
+/*   Updated: 2022/10/01 17:01:21 by ibulak        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void Character::unequip( int idx ) {
 void Character::use( int idx, ICharacter& target ) {
     if (_inventoryCount == 0 || not _inventory[idx])
         std::cout << _name << " has no materia" << std::endl;
-    else if ( idx > 4 || idx < 0 )
+    else if ( idx >= 4 || idx < 0 )
         std::cout << "not an available index" << std::endl;
     else
         _inventory[idx]->use( target );
