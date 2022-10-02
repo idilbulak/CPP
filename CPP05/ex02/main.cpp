@@ -5,26 +5,7 @@
 
 #include <iomanip>
 
-void test_function(Form &f, const std::string b_name, int b_grade)
-{
-	std::cout << "===== " << b_name << " =====" << std::endl;
-	try {
-		Bureaucrat b(b_name, b_grade);
-		std::cout << b << std::endl;
-		std::cout << std::endl;
-
-		b.signForm(f);
-		std::cout << std::endl;
-
-		std::cout << f << std::endl;
-		b.executeForm(f);
-	} catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-}
-
-int main() {
+int main( void ) {
 	std::cout << std::boolalpha;
 	{
 		std::cout << YELLOW << "[ TEST ] : ShrubberyCreationForm" << RESET << std::endl;
