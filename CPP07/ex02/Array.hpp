@@ -90,7 +90,7 @@ void Array<T>::display(std::ostream& o) const
 	if (_len == 0)
 		return;
 	for (i = 0; i < _len - 1; i++)
-		o << _array[i] << " - ";
+		o << _array[i] << " .. ";
 	if (i == _len - 1)
 		o << _array[i];
 }
