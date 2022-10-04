@@ -2,18 +2,18 @@ NAME			= realtype
 
 CPP				= c++
 
-FLAGS			= -std=c++98 -Wall -Wextra -Werror
+FLAGS			= -Wall -Wextra -Werror -I -std=c++98
 
 SRC				= main.cpp Base.cpp
 
-INC				= Base.hpp A.cpp B.cpp C.cpp
+INC				= Base.hpp A.hpp B.hpp C.hpp
 
 OBJ_DIR			= obj
 OBJ				= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 
 all : $(NAME)
 
-$(OBJ_DIR)/%.o : %.cpp
+$(OBJ_DIR)/%.o : %.cpp $(INC)
 	@mkdir -p $(dir $@)
 	$(CPP) $(FLAGS) -c $< -o $@
 
