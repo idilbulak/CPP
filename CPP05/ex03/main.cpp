@@ -6,7 +6,7 @@
 /*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 10:42:43 by ibulak        #+#    #+#                 */
-/*   Updated: 2022/10/04 10:45:16 by ibulak        ########   odam.nl         */
+/*   Updated: 2022/10/04 10:50:28 by ibulak        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ int main( void ) {
   form = intern.makeForm("wrongForm", "target4");
 	delete form;
   std::cout << std::endl;
+  // while(42){};
 }
