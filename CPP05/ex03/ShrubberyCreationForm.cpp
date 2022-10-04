@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ShrubberyCreationForm.cpp                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/04 10:35:30 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/10/04 10:37:03 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
@@ -29,11 +41,15 @@ const std::string& ShrubberyCreationForm::getTarget( void ) const {
 	return _target;
 }
 
+const char *ShrubberyCreationForm::FileNotWorkingException::what( void ) const throw() {
+    return "FileNotWorking";
+}
+
 void ShrubberyCreationForm::execute( Bureaucrat const& executor ) const {
 	execute_base(executor);
-	std::ofstream ostrm(getTarget() + "_shrubery", std::ofstream::out | std::ofstream::trunc);
-	// if (!ostrm.good())
-	//     throw FileNotWorkingException();
+	std::ofstream ostrm(getTarget() + "_shrubery", std::ofstream::out);
+	if (!ostrm.good())
+	    throw FileNotWorkingException();
 	ostrm <<      
 "            .        +          .      .          .\n"
 "     .            _        .                    .\n"

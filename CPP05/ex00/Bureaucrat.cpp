@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Bureaucrat.cpp                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/04 09:42:59 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/10/04 09:47:36 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat( void ) {}
@@ -34,22 +46,24 @@ const int& Bureaucrat::getGrade( void ) const {
 void Bureaucrat::promotion( void ) {
     if (_grade - 1 < 1)
         throw GradeTooHighException();
+    std::cout << "Bureaucrat got a promotion"<< std::endl;
     _grade--;
 }
 
 void Bureaucrat::demotion( void ) {
     if (_grade + 1 > 150)
         throw GradeTooLowException();
+    std::cout << "Bureaucrat got a demotion"<< std::endl;
     _grade++;
 }
 
-// const char *Bureaucrat::GradeTooHighException::what( void ) const throw() {
-//     return "GradeTooHigh";
-// }
+const char *Bureaucrat::GradeTooHighException::what( void ) const throw() {
+    return "GradeTooHigh";
+}
 
-// const char *Bureaucrat::GradeTooLowException::what( void ) const throw() {
-//     return "GradeTooLow";
-// }
+const char *Bureaucrat::GradeTooLowException::what( void ) const throw() {
+    return "GradeTooLow";
+}
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
     os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();

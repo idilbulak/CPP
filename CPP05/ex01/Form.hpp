@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Form.hpp                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/04 09:52:59 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/10/04 09:53:49 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FORM_HPP
 # define FORM_HPP
 
@@ -28,15 +40,11 @@ class Form {
 
         class GradeTooHighException : public std::exception {
             public:
-                virtual const char *what() const throw(){
-                    return "Form_GradeTooHigh!";
-                }
+                virtual const char *what() const throw();
         };
         class GradeTooLowException : public std::exception {
             public:
-                virtual const char *what() const throw(){
-                    return "Form_GradeTooLow!";
-                }
+                virtual const char *what() const throw();
         };
 
     private:

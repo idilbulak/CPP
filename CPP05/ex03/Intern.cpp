@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Intern.cpp                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/04 10:42:16 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/10/04 10:42:17 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -14,6 +26,10 @@ Intern::~Intern( void ) {}
 Intern &Intern::operator=( const Intern& intern ) {
     (void)intern;
     return *this;
+}
+
+const char *Intern::FormDoesNotExistException::what( void ) const throw() {
+    return "FormDoesNotExist";
 }
 
 Form *Intern::makeForm( const std::string& name, const std::string& target) {

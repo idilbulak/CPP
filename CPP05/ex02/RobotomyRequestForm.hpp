@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   RobotomyRequestForm.hpp                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/04 10:26:35 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/10/04 10:26:36 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 
@@ -12,8 +24,6 @@ class RobotomyRequestForm : public Form {
         RobotomyRequestForm ( const RobotomyRequestForm& form );
         RobotomyRequestForm &operator=( const RobotomyRequestForm& form );
         virtual ~RobotomyRequestForm ( void );
-
-        // virtual void makeSound( void ) const;
 
 		const std::string& getTarget( void ) const;
         void execute(Bureaucrat const& exec) const;

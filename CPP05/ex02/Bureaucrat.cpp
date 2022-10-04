@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Bureaucrat.cpp                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/04 10:12:10 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/10/04 10:12:11 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat( void ) {}
@@ -21,6 +33,14 @@ Bureaucrat &Bureaucrat::operator=( const Bureaucrat& bureaucrat ) {
     const_cast<std::string &>(_name) = bureaucrat._name;
     _grade = bureaucrat._grade;
     return *this;
+}
+
+const char *Bureaucrat::GradeTooHighException::what( void ) const throw() {
+    return "GradeTooHigh";
+}
+
+const char *Bureaucrat::GradeTooLowException::what( void ) const throw() {
+    return "GradeTooLow";
 }
 
 const std::string& Bureaucrat::getName( void ) const {

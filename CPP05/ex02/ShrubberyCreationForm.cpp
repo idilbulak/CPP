@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ShrubberyCreationForm.cpp                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/04 10:26:49 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/10/04 10:26:50 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
@@ -31,9 +43,7 @@ const std::string& ShrubberyCreationForm::getTarget( void ) const {
 
 void ShrubberyCreationForm::execute( Bureaucrat const& executor ) const {
 	execute_base(executor);
-	std::ofstream ostrm(getTarget() + "_shrubery", std::ofstream::out | std::ofstream::trunc);
-	// if (!ostrm.good())
-	//     throw FileNotWorkingException();
+	std::ofstream ostrm(getTarget() + "_shrubery", std::ofstream::out);
 	ostrm <<      
 "            .        +          .      .          .\n"
 "     .            _        .                    .\n"
@@ -61,6 +71,6 @@ void ShrubberyCreationForm::execute( Bureaucrat const& executor ) const {
 "          ~~~w/w~\"~~,\\` `:/,-(~`\"~~~~~~~~\"~o~\\~/~w|/~\n"
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 
-  	std::cout << "Create Shrubbery file" << std::endl;
+  	std::cout << "Created Shrubbery file" << std::endl;
   	ostrm.close();
 }

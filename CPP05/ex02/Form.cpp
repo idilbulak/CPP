@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Form.cpp                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/04 10:25:38 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/10/04 10:25:39 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 
 Form::Form( void ) 
@@ -22,6 +34,18 @@ Form &Form::operator=( const Form& form ) {
     const_cast<int &>(_gradeSign) = form.getGradeSigned();
     const_cast<int &>(_gradeExecute) = form.getGradeExecute();
     return *this;
+}
+
+const char *Form::GradeTooHighException::what( void ) const throw() {
+    return "Form_GradeTooHigh";
+}
+
+const char *Form::GradeTooLowException::what( void ) const throw() {
+    return "Form_GradeTooLow";
+}
+
+const char *Form::SignedException::what( void ) const throw() {
+    return "Form_NotSigned";
 }
 
 const std::string& Form::getName( void ) const {

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Intern.hpp                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/04 10:42:19 by ibulak        #+#    #+#                 */
+/*   Updated: 2022/10/04 10:42:20 by ibulak        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef INTERN_HPP
 # define INTERN_HPP
 
@@ -26,9 +38,7 @@ class Intern {
 
         class FormDoesNotExistException : public std::exception {
             public:
-                virtual const char *what() const throw(){
-                    return "FormDoesNotExist!";
-                }
+                virtual const char *what() const throw();
         };
 };
 
