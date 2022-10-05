@@ -6,7 +6,7 @@
 /*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 10:26:26 by ibulak        #+#    #+#                 */
-/*   Updated: 2022/10/04 10:26:27 by ibulak        ########   odam.nl         */
+/*   Updated: 2022/10/05 09:44:56 by ibulak        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ const std::string& RobotomyRequestForm::getTarget( void ) const {
 void RobotomyRequestForm::execute( Bureaucrat const& executor ) const {
 	execute_base(executor);
 	std::cout << "*DRILLING NOISE*" << std::endl;
+	srand((unsigned int)time(NULL));
     int randombool = rand() % 2;
     if (randombool)
         std::cout << getTarget() << " has been robotomized successfully." << std::endl;

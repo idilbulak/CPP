@@ -6,7 +6,7 @@
 /*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 10:56:55 by ibulak        #+#    #+#                 */
-/*   Updated: 2022/10/04 10:56:56 by ibulak        ########   odam.nl         */
+/*   Updated: 2022/10/05 09:16:28 by ibulak        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Converter::Converter( const std::string &string )
 		if ((string.find("f") != std::string::npos )) {
 			try {
 				(_valuef) = std::stof(string);
+				printf("%f\n", _valuef);
 				const_cast<int &>(_type) = 1;
 			}
 			catch (std::exception& exception) {

@@ -6,7 +6,7 @@
 /*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 11:07:01 by ibulak        #+#    #+#                 */
-/*   Updated: 2022/10/04 11:07:02 by ibulak        ########   odam.nl         */
+/*   Updated: 2022/10/05 09:39:45 by ibulak        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,25 @@
 #include <iostream>
 #include <exception>
 
-class Data {
-
-    public:
-        Data( int n );
-        Data ( const Data& data );
-        Data &operator=( const Data& data );
-        virtual ~Data ( void );
-
-        int getInt( void ) const ;
-
-    private:
-        const int _n;
-
+struct Data {
+   int _n;
 };
 
-std::ostream &operator<<(std::ostream &os, const Data &data);
+// class Data {
+
+//     public:
+//         Data( int n );
+//         Data ( const Data& data );
+//         Data &operator=( const Data& data );
+//         virtual ~Data ( void );
+
+//         int getInt( void ) const ;
+
+//     private:
+//         const int _n;
+
+// };
+
+// std::ostream &operator<<(std::ostream &os, const Data &data);
 
 #endif

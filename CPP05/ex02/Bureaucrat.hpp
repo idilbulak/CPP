@@ -6,7 +6,7 @@
 /*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 10:11:47 by ibulak        #+#    #+#                 */
-/*   Updated: 2022/10/04 10:11:48 by ibulak        ########   odam.nl         */
+/*   Updated: 2022/10/05 09:48:51 by ibulak        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Bureaucrat {
         void promotion( void );
         void demotion( void );
         void signForm(Form& form) const;
-        void executeForm(Form& form) const;
+        void executeForm(const Form& form) const;
 
         class GradeTooHighException : public std::exception {
             public:

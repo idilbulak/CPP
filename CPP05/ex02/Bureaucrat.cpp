@@ -6,7 +6,7 @@
 /*   By: ibulak <ibulak@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 10:12:10 by ibulak        #+#    #+#                 */
-/*   Updated: 2022/10/04 10:12:11 by ibulak        ########   odam.nl         */
+/*   Updated: 2022/10/05 09:51:05 by ibulak        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
     return os;
 }
 
-void Bureaucrat::executeForm( Form& form) const {
+void Bureaucrat::executeForm( const Form& form) const {
     try {
         form.execute(*this);
         std::cout << _name << " executed " << form.getName() << std::endl;
